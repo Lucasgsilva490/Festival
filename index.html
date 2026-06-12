@@ -107,14 +107,11 @@
       background: rgba(28, 13, 48, 0.96);
       border: 1px solid var(--border-glow);
       border-radius: 16px;
-      /* Ajustado para comportar múltiplas linhas */
       padding: 14px 22px;
       font-size: 13.5px;
       color: var(--rose-light);
       white-space: normal;
-      /* Permite quebrar linha */
       width: 85%;
-      /* Limita a largura na tela */
       max-width: 340px;
       line-height: 1.5;
       opacity: 0;
@@ -345,6 +342,27 @@
       filter: saturate(0.3);
     }
 
+    /* Brilho Dourado do Card do Dia 12 na Home */
+    @keyframes goldGlowCard {
+      0% {
+        box-shadow: 0 0 10px rgba(244, 200, 66, 0.15), inset 0 0 10px rgba(244, 200, 66, 0.05);
+      }
+
+      50% {
+        box-shadow: 0 0 25px rgba(244, 200, 66, 0.4), inset 0 0 15px rgba(244, 200, 66, 0.15);
+      }
+
+      100% {
+        box-shadow: 0 0 10px rgba(244, 200, 66, 0.15), inset 0 0 10px rgba(244, 200, 66, 0.05);
+      }
+    }
+
+    .today-special {
+      animation: goldGlowCard 3s infinite ease-in-out;
+      border-color: rgba(244, 200, 66, 0.6) !important;
+      background: linear-gradient(135deg, #2d1050 0%, rgba(244, 200, 66, 0.08) 50%, #1e0a38 100%) !important;
+    }
+
     .card-inner {
       display: flex;
       align-items: center;
@@ -440,9 +458,9 @@
     }
 
     /* ==========================================
-   DIA 11 SCREEN
+   DAY SCREENS (COMMON)
    ========================================== */
-    #day11-screen {
+    .day-screen {
       padding-bottom: 50px;
       scroll-behavior: smooth;
     }
@@ -507,7 +525,6 @@
       padding: 0 12px;
     }
 
-    /* ENIGMA DA FLOR (Fonte Atualizada - Sem ser cursiva) */
     .enigma-box {
       margin: 24px 20px 0;
       padding: 22px 20px;
@@ -592,7 +609,6 @@
       color: var(--rose-light);
     }
 
-    /* Password Area */
     .password-area {
       display: flex;
       flex-direction: column;
@@ -632,7 +648,6 @@
       transform: scale(0.96);
     }
 
-    /* Unlocked Content */
     .stage-content {
       display: none;
       animation: fadeInContent 0.8s ease forwards;
@@ -650,7 +665,6 @@
       }
     }
 
-    /* Stage 1 & Text Styles */
     .reveal-text {
       font-family: 'Playfair Display', serif;
       font-size: 26px;
@@ -705,7 +719,7 @@
       text-shadow: 0 0 8px rgba(244, 200, 66, 0.3);
     }
 
-    /* Stage 2: VIP Manual */
+    /* VIP Manual e Extras do Dia 11 */
     .vip-manual {
       background: var(--bg-glass-2);
       padding: 20px;
@@ -761,7 +775,7 @@
       transform: scale(0.97);
     }
 
-    /* Stage 3: Super Quiz */
+    /* Quiz */
     .quiz-container {
       background: rgba(0, 0, 0, 0.2);
       border-radius: 12px;
@@ -841,7 +855,6 @@
       color: var(--text-primary);
     }
 
-    /* Spoilers Panel */
     .spoilers-panel {
       margin-top: 10px;
     }
@@ -882,7 +895,6 @@
       color: var(--gold-light);
     }
 
-    /* Stage 4: Teaser Fog */
     .teaser-box {
       background: linear-gradient(135deg, #1a0a2e, #3d1c68);
       border-radius: 12px;
@@ -924,7 +936,6 @@
       animation: pulse-heart 2s infinite;
     }
 
-    /* Stage 5: Video & Movies */
     .video-placeholder {
       width: 100%;
       aspect-ratio: 16/9;
@@ -938,13 +949,6 @@
       position: relative;
       overflow: hidden;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    }
-
-    .play-btn {
-      font-size: 40px;
-      color: var(--rose-light);
-      animation: pulse-heart 2s infinite;
-      cursor: pointer;
     }
 
     .movies-scroll {
@@ -1047,7 +1051,6 @@
       display: block;
     }
 
-    /* ===== AVALIAÇÃO FINAL ===== */
     .review-container {
       background: linear-gradient(135deg, rgba(232, 164, 176, 0.05), rgba(124, 58, 237, 0.05));
       border-radius: var(--radius-card);
@@ -1122,6 +1125,189 @@
       display: block;
       animation: fadeInContent 0.5s ease;
     }
+
+    /* ==========================================
+       DIA 12 - MELHORIAS VISUAIS (HEADER & BOXES)
+       ========================================== */
+    .day12-title-glow {
+      text-shadow: 0 0 25px rgba(244, 200, 66, 0.4);
+      letter-spacing: 0.5px;
+    }
+
+    .day12-subtitle {
+      font-family: 'Lato', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding: 0 18px;
+      margin-bottom: 10px;
+    }
+
+    .day12-subtitle strong {
+      color: var(--gold-light);
+      font-weight: 700;
+      text-shadow: 0 0 10px rgba(244, 200, 66, 0.3);
+    }
+
+    .enigma-box-special {
+      background: linear-gradient(135deg, rgba(244, 200, 66, 0.08), rgba(124, 58, 237, 0.03));
+      border: 1px solid rgba(244, 200, 66, 0.3);
+      border-left: 4px solid var(--gold-light);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(244, 200, 66, 0.05);
+    }
+
+    /* ==========================================
+       DIA 12 - PROJETO ARQUITETÔNICO (PLANTA BAIXA)
+       ========================================== */
+    .blueprint-wrapper {
+      margin: 0 20px 30px;
+      padding: 24px 20px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(244, 200, 66, 0.25);
+      border-radius: var(--radius-card);
+      position: relative;
+      box-shadow: inset 0 0 30px rgba(244, 200, 66, 0.03);
+    }
+
+    .blueprint-header {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .blueprint-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(244, 200, 66, 0.2);
+    }
+
+    .blueprint-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    .blueprint-nodes {
+      display: flex;
+      justify-content: space-around;
+      position: relative;
+      margin-bottom: 28px;
+    }
+
+    .blueprint-nodes::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      border-top: 2px dashed rgba(244, 200, 66, 0.3);
+      z-index: 0;
+    }
+
+    .bp-node {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--gold-light);
+      color: var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      z-index: 1;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .bp-node.active {
+      background: linear-gradient(135deg, var(--gold-light), #f0a500);
+      color: var(--bg-deep);
+      box-shadow: 0 0 25px rgba(244, 200, 66, 0.6);
+      transform: scale(1.15) rotate(5deg);
+      border: none;
+    }
+
+    .bp-content {
+      display: none;
+      animation: fadeInContent 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+      text-align: center;
+    }
+
+    .bp-content.active {
+      display: block;
+    }
+
+    .bp-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid rgba(244, 200, 66, 0.4);
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .bp-text-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: 26px;
+      color: var(--rose-light);
+      margin-bottom: 12px;
+      text-shadow: 0 2px 8px rgba(232, 164, 176, 0.3);
+    }
+
+    .bp-text {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-primary);
+      font-weight: 300;
+      padding: 0 10px;
+    }
+
+    /* Estilo para a imagem borrada do Jappa com texto estilizado por cima */
+    .blurred-img-container {
+      width: 100%;
+      height: 200px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      border: 1px solid rgba(244, 200, 66, 0.3);
+      background: #000;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+
+    .blurred-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(15px);
+      transition: transform var(--transition);
+    }
+
+    .blurred-overlay-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      font-weight: 700;
+      color: rgba(253, 230, 138, 0.65);
+      text-shadow: 0 0 25px rgba(244, 200, 66, 0.8), 0 4px 10px rgba(0, 0, 0, 0.5);
+      letter-spacing: 6px;
+      pointer-events: none;
+    }
   </style>
 </head>
 
@@ -1146,28 +1332,35 @@
       <p class="timeline-label">— Programação do Festival —</p>
 
       <div class="days-list">
-        <div class="day-card unlocked" onclick="openDay11(event)">
-          <span class="hoje-pill">✨ Hoje</span>
+
+        <div class="day-card unlocked" onclick="openScreen('day11-screen', event)">
           <div class="card-inner">
             <div class="card-date-badge"><span class="badge-day">11</span><span class="badge-month">Jun</span></div>
             <div class="card-text">
-              <p class="card-tag">Dia 11 · Desbloqueado</p>
+              <p class="card-tag">Dia 11 · Completo</p>
               <p class="card-title">O Início da Jornada ✨</p>
-              <p class="card-desc">Vamos começar nosso festival?</p>
+              <p class="card-desc">Reveja a nossa primeira noite</p>
             </div>
             <div class="card-icon">🔓</div>
           </div>
         </div>
 
-        <div class="day-card locked" onclick="showLockedToast(event)">
+        <div class="day-card unlocked today-special" onclick="openScreen('day12-screen', event)">
+          <span class="hoje-pill" style="background: linear-gradient(90deg, var(--gold), var(--rose));">Hoje
+            Especial</span>
           <div class="card-inner">
-            <div class="card-date-badge"><span class="badge-day">12</span><span class="badge-month">Jun</span></div>
-            <div class="card-text">
-              <p class="card-tag">Dia 12 · Bloqueado</p>
-              <p class="card-title">Uma surpresa especial</p>
-              <p class="card-desc">Revelado amanhã no nosso dia 💫</p>
+            <div class="card-date-badge"
+              style="border-color: var(--gold-light); box-shadow: inset 0 0 10px rgba(244, 200, 66, 0.2);">
+              <span class="badge-day"
+                style="color: var(--gold-light); text-shadow: 0 0 8px rgba(244,200,66,0.4);">12</span>
+              <span class="badge-month">Jun</span>
             </div>
-            <div class="card-icon">🔒</div>
+            <div class="card-text">
+              <p class="card-tag" style="color: var(--gold-light);">Dia 12 · Desbloqueado</p>
+              <p class="card-title" style="text-shadow: 0 0 5px rgba(255,255,255,0.2);">O Nosso Aniversário 🌹</p>
+              <p class="card-desc">O ápice do nosso festival</p>
+            </div>
+            <div class="card-icon" style="text-shadow: 0 0 15px rgba(244, 200, 66, 0.6);">✨</div>
           </div>
         </div>
 
@@ -1190,8 +1383,8 @@
       </div>
     </div>
 
-    <div id="day11-screen" class="screen hidden-right">
-      <button class="back-btn" onclick="closeDay11()">
+    <div id="day11-screen" class="screen hidden-right day-screen">
+      <button class="back-btn" onclick="closeScreen('day11-screen')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
           stroke-linejoin="round">
           <polyline points="15 18 9 12 15 6" />
@@ -1206,14 +1399,14 @@
 
       <div class="enigma-box">
         <div class="enigma-title">🌿 Guarde com Amor: Ponto de Partida</div>
-        <p class="enigma-text">Se você está lendo isso, você recebeu um lindo buquê de Astromélias e Eucaliptos. Ele foi
+        <p class="enigma-text">Se você está lendo isso, você recebeu um lindo buquê de Astromélias and Eucaliptos. Ele
+          foi
           escolhido a dedo para representar o dia de hoje. Mas atenção: este festival foi planejado em camadas. O que
           você tem em mãos agora é só o primeiro capítulo físico de uma sequência que já está em andamento. Coloque as
           flores em um lindo vaso, mantenha-as vivas e por perto, porque o tempo vai ditar o resto.</p>
       </div>
 
       <div class="stages-wrapper">
-
         <div class="stage-card next" id="stage-1">
           <div class="stage-header">
             <span class="stage-icon" id="icon-1">🔒</span>
@@ -1226,7 +1419,6 @@
           <div class="stage-content" id="content-1">
             <p class="reveal-text">Surpresa! Hoje a cozinha da sua casa está de folga absoluta. 🥩✨</p>
             <img src="outback_tiete.jpg" alt="Outback Tietê" class="stage-image">
-
             <div class="nostalgic-box">
               <p class="romantic-text">Você lembra daquele frio na barriga antes do nosso primeiro beijo? Da timidez
                 disfarçada, daquele cenário perfeito e de como um momento tão simples mudou a rota das nossas vidas?
@@ -1238,7 +1430,6 @@
                 grande estilo, dividindo a mesa e muitas risadas no <span class="destaque-outback">Outback Tietê</span>.
               </p>
             </div>
-
             <a href="https://www.outback.com.br/cardapio" target="_blank" class="external-link-btn">Ver o Cardápio
               🥩</a>
           </div>
@@ -1256,7 +1447,6 @@
           <div class="stage-content" id="content-2">
             <p class="romantic-text">Bem-vinda ao seu Uber Exclusivo. Como a passageira mais VIP da minha vida, eu criei
               alguns termos de consentimento para a nossa viagem de hoje:</p>
-
             <div class="vip-manual">
               <div class="vip-title">Manual da Passageira VIP</div>
               <p class="vip-rule"><strong>Regra 1:</strong> Fica terminantemente proibido abrir aplicativos da
@@ -1272,12 +1462,10 @@
                 ou se esforçar pra decidir algo. Sua única função nesta noite é ser mimada, não fazer nenhum esforço e
                 deixar que eu cuide de absolutamente tudo para você como preparei esse Festival.</p>
             </div>
-
             <p class="transition-text">E já que estamos no caminho para o nosso jantar, que tal usar esse tempinho para
               fazer uma visita ao passado? Antes de darmos o próximo passo, clique abaixo para relembrar que cada
               quilômetro que andamos valeu a pena...</p>
-            <a href="https://emillylucasamor.onrender.com" target="_blank" class="external-link-btn">Mergulhar na
-              Nossa
+            <a href="https://emillylucasamor.onrender.com" target="_blank" class="external-link-btn">Mergulhar na Nossa
               História 📖✨</a>
           </div>
         </div>
@@ -1292,16 +1480,13 @@
             <button class="btn-primary" onclick="unlockStage(3, event, false)">Desbloquear Etapa</button>
           </div>
           <div class="stage-content" id="content-3">
-
             <div class="quiz-container" id="quiz-container">
               <div class="quiz-header" id="quiz-header">Pergunta 1 de 10</div>
               <p class="quiz-question" id="quiz-question">Carregando...</p>
               <div class="quiz-options" id="quiz-options"></div>
             </div>
-
             <div class="spoilers-panel">
               <div class="spoilers-title">Mural de Previsões</div>
-
               <div class="spoiler-card">
                 <div class="spoiler-icon">⏳🤫</div>
                 <div class="spoiler-text"><strong>Previsão para o Dia 12:</strong> A sexta-feira parece ter um roteiro
@@ -1309,7 +1494,6 @@
                   não vai procurar. Quando você achar que é a hora de dar tchau, o festival vai provar o contrário...
                 </div>
               </div>
-
               <div class="spoiler-card">
                 <div class="spoiler-icon">☁️🥂</div>
                 <div class="spoiler-text"><strong>Previsão para o Dia 13:</strong> O último capítulo do nosso festival
@@ -1317,7 +1501,6 @@
                   a nossa memória mais bonita e o encerramento perfeito para esses 2 anos.</div>
               </div>
             </div>
-
           </div>
         </div>
 
@@ -1342,7 +1525,6 @@
                 confortável</span> e relaxe o coração. Eu preparei um <span class="text-highlight">clima especial</span>
               e muito misterioso esperando por nós dois lá dentro, um
               jeitinho só nosso de fechar o Primeiro Dia com chave de ouro. Olhe para o box abaixo...</p>
-
             <div class="teaser-box">
               <div class="teaser-fog">
                 <span class="fog-text">Carregando o Modo Conforto... 🧭</span>
@@ -1358,26 +1540,21 @@
             <span class="stage-icon" id="icon-5">✨</span>
             <span class="stage-title">Estágio 5: O Grand Finale</span>
           </div>
-
           <div class="password-area" id="area-5">
             <input type="text" id="pwd-5" class="pwd-input" placeholder="A resposta da última pergunta do dia...">
             <button class="btn-primary" onclick="tryUnlockStage5(event)">Desbloquear Etapa Final</button>
           </div>
-
           <div class="stage-content" id="content-5">
-
             <div class="video-placeholder">
               <iframe width="560" height="315"
                 src="https://www.youtube.com/embed/3rAEZAHrnvM?si=6sXcj3Lf2AN5F3KU?autoplay=1&mute=1"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                allowfullscreen></iframe>
             </div>
-
             <p class="romantic-text">O clima agora é 100% nosso. Esqueça o mundo lá fora, deite aqui no meu peito e
               deixe a <span class="text-highlight">magia do cinema</span> invadir a nossa sala. A pipoca tá na mão,
               agora é só você relaxar e escolher a estrela da nossa noite:</p>
-
             <div class="movies-scroll">
               <div class="movie-card" onclick="selectMovie(this, event)">
                 <div class="selected-badge">✓ Escolhido</div>
@@ -1388,7 +1565,6 @@
                   <button class="movie-btn">Escolher</button>
                 </div>
               </div>
-
               <div class="movie-card" onclick="selectMovie(this, event)">
                 <div class="selected-badge">✓ Escolhido</div>
                 <img src="Moana_2.jpg" alt="Moana 2" class="movie-poster">
@@ -1398,7 +1574,6 @@
                   <button class="movie-btn">Escolher</button>
                 </div>
               </div>
-
               <div class="movie-card" onclick="selectMovie(this, event)">
                 <div class="selected-badge">✓ Escolhido</div>
                 <img src="doctor.jpg" alt="The Good Doctor" class="movie-poster">
@@ -1409,10 +1584,8 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
-
       </div>
       <div id="day11-footer" style="display: none; padding: 0 20px 30px;">
         <div class="review-container" style="margin-top: 0;">
@@ -1421,7 +1594,6 @@
             nosso festival. Descanse o coração, porque amanhã a aventura continua!</p>
           <p class="romantic-text" style="font-size: 13px; font-weight: 700; color: var(--rose-light);">Como você avalia
             a nossa noite de hoje?</p>
-
           <div class="review-hearts">
             <span class="review-heart" onclick="rateHeart(1, event)">💜</span>
             <span class="review-heart" onclick="rateHeart(2, event)">💜</span>
@@ -1430,13 +1602,176 @@
             <span class="review-heart" onclick="rateHeart(5, event)">💜</span>
           </div>
           <div id="review-label" class="review-label"></div>
-
           <button class="review-save-btn" onclick="saveReview(event)">Guardar Memória</button>
           <div id="review-saved"></div>
         </div>
       </div>
-
     </div>
+
+
+    <div id="day12-screen" class="screen hidden-right day-screen">
+      <button class="back-btn" onclick="closeScreen('day12-screen')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+          stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6" />
+        </svg> Voltar
+      </button>
+
+      <div class="day-header" style="margin-bottom: 25px;">
+        <h2 class="day-main-title day12-title-glow"
+          style="background: linear-gradient(135deg, var(--gold-light), var(--rose)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+          12 de Junho<br>Segundo Dia do Festival</h2>
+        <p class="day12-subtitle">Hoje não é um dia qualquer. É o marco de <strong>2 anos</strong> escolhendo a mesma
+          pessoa. O roteiro de hoje foi milimetricamente desenhado, <strong>pensado em cada detalhe</strong>, para
+          celebrar a arquiteta do meu coração. 💜</p>
+      </div>
+
+      <div class="enigma-box enigma-box-special" style="margin-bottom: 35px;">
+        <div class="enigma-title" style="color: var(--gold-light); font-size: 15px;"><span
+            style="font-size: 18px;">📜</span> A Espera Justificada</div>
+        <p class="enigma-text">Eu sei que a curiosidade bateu forte logo cedo... Mas <strong>as melhores obras de
+            arte</strong> exigem paciência e os últimos minutos de dedicação do arquiteto. O que construímos hoje será
+          inesquecível, e <span class="text-highlight">o tempo é o nosso melhor aliado</span>. Apenas confie em mi e
+          aproveite a vista.</p>
+      </div>
+
+      <div class="blueprint-wrapper">
+        <div class="blueprint-header">
+          <div class="blueprint-title">Planta Baixa: 2 Anos</div>
+          <div class="blueprint-sub">Toque nos pontos estruturais do nosso projeto.</div>
+        </div>
+
+        <div class="blueprint-nodes">
+          <div class="bp-node active" onclick="showBlueprint(1, event)">1</div>
+          <div class="bp-node" onclick="showBlueprint(2, event)">2</div>
+          <div class="bp-node" onclick="showBlueprint(3, event)">3</div>
+        </div>
+
+        <div class="bp-content active" id="bp-content-1">
+          <img src="foto1.jpg" alt="A Fundação" class="bp-image">
+          <div class="bp-text-title">A Fundação</div>
+          <p class="bp-text">O nosso alicerce perfeito. Aquele primeiro beijo não foi apenas um acaso da vida, foi a
+            pedra fundamental de tudo que somos hoje. Ali, no meio daquela timidez gostosa, nossas rotas se cruzaram de
+            forma definitiva para construir um caminho único e só nosso.</p>
+        </div>
+
+        <div class="bp-content" id="bp-content-2">
+          <img src="foto2.jpg" alt="A Estrutura" class="bp-image">
+          <div class="bp-text-title">A Estrutura</div>
+          <p class="bp-text">As paredes que nos protegem. Feitas das nossas risadas diárias, de uma cumplicidade
+            inabalável e daquele nosso dom maravilhoso de transformar até o trânsito caótico de São Paulo, dentro do
+            nosso Mobi branco, no melhor e mais seguro refúgio do meu dia.</p>
+        </div>
+
+        <div class="bp-content" id="bp-content-3">
+          <img src="foto3.jpg" alt="A Cobertura" class="bp-image">
+          <div class="bp-text-title">O Acabamento Infinito</div>
+          <p class="bp-text">O nosso teto de estrelas. Olhar para você hoje, celebrando 2 anos, é ter a mais absoluta
+            certeza de que a planta da nossa vida não tem limites. É um projeto em constante e linda expansão, onde eu
+            escolho viver ao seu lado todos os dias.</p>
+        </div>
+      </div>
+
+      <div class="stages-wrapper">
+
+        <div class="stage-card unlocked" id="stage-121">
+          <div class="stage-header">
+            <span class="stage-icon" id="icon-121">🔓</span>
+            <span class="stage-title">Estágio 1: Laudo de Carga Estrutural</span>
+          </div>
+          <div class="password-area" id="area-121" style="display: none;">
+            <input type="text" id="pwd-121" class="pwd-input" placeholder="Digite a palavra-chave...">
+            <button class="btn-primary" onclick="unlockStage(121, event, false)">Desbloquear Etapa</button>
+          </div>
+          <div class="stage-content" id="content-121" style="display: block;">
+            <p class="reveal-text" style="color: var(--gold-light);">Aviso Técnico Importante 🏗️📋</p>
+
+            <div class="blurred-img-container">
+              <img src="jappa.webp" alt="Banquete Oculto" class="blurred-img" id="jappa-blurred-img">
+              <div class="blurred-overlay-text">???</div>
+            </div>
+
+            <div class="vip-manual" style="border-left-color: var(--gold-light); margin-bottom: 18px;">
+              <div class="vip-title"
+                style="font-family: 'Playfair Display', serif; font-size: 13px; letter-spacing: 1px; font-weight: 700; color: var(--gold-light); text-transform: uppercase; text-align: left; margin-bottom: 8px;">
+                PROJETO DE EXPANSÃO DE MEMÓRIAS</div>
+              <p class="vip-rule" style="margin-bottom: 4px; font-size: 13px;"><strong>DOCUMENTO:</strong> Laudo de
+                Estabilidade e Resistência de Materiais</p>
+              <p class="vip-rule" style="font-size: 13px;"><strong>RESPONSÁVEL:</strong> Lucas (Seu namorado e
+                engenheiro de momentos especiais)</p>
+            </div>
+
+            <p class="romantic-text">Atenção, futura arquiteta: realizamos uma análise preliminar e constatamos que a
+              estrutura do seu coração e do seu estômago está prestes a receber uma <strong>carga pesadíssima</strong>
+              de amor e surpresas nas próximas horas.</p>
+            <p class="romantic-text">Esqueça as entregas, os prazos e a exaustão da faculdade. O seu caminho de volta
+              para casa é o início oficial do nosso projeto de hoje. A recomendação técnica das autoridades é apenas
+              uma: <span class="text-highlight"><strong>guarde bastante espaço para a comida, pois hoje você vai
+                  precisar</strong></span>.</p>
+
+            <button class="btn-primary"
+              style="background: rgba(255,255,255,0.05); border: 1px solid var(--gold-light); color: var(--gold-light); margin-bottom: 12px; width: 100%;"
+              onclick="showStructuralHint(event)">
+              🔍 Solicitar Dica Estrutural
+            </button>
+            <div id="structural-hint-balloon" class="nostalgic-box"
+              style="display: none; border-left: 3px solid var(--gold-light); background: rgba(244, 200, 66, 0.05); animation: fadeInContent 0.5s ease;">
+              <p class="romantic-text" style="font-size: 13.5px; margin-bottom: 0; font-style: italic;">
+                <strong>Dica do Engenheiro:</strong> O destino de hoje exige precisão milenar, envolve cortes simétricos
+                perfeitos e uma harmonia que nasceu do outro lado do mundo... mas que combina perfeitamente com o nosso
+                clima caseiro. Consegue decifrar a planta? 👀🍣
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-card locked next" id="stage-122">
+          <div class="stage-header">
+            <span class="stage-icon" id="icon-122">🔒</span>
+            <span class="stage-title">Estágio 2: O Teste de Intuição</span>
+          </div>
+          <div class="password-area" id="area-122">
+            <p
+              style="font-size: 14px; color: var(--gold-light); font-weight: 700; text-align: center; margin: 8px 0; line-height: 1.5; text-shadow: 0 0 10px rgba(244,200,66,0.2);">
+              ⏳ Estágio Oculto pelo Engenheiro ⏳<br>
+              <span
+                style="color: var(--text-primary); font-weight: 300; font-size: 13px; opacity: 0.85; text-shadow: none; display: block; margin-top: 6px;">
+                Quando for o momento exato, o Lucas vai liberar este estágio automaticamente no seu celular. Dê aquele
+                abraço mais apertado do dia nele e aguarde a mágica atualizar! 💜
+              </span>
+            </p>
+          </div>
+          <div class="stage-content" id="content-122">
+            <p class="reveal-text">As aparências enganam... 🎭</p>
+            <p class="romantic-text">Será que o seu sexto sentido de namorada está afiado? Você acha que a nossa
+              programação se encerra no almoço e na volta para casa? O roteiro óbvio é apenas uma distração... Guarde
+              bem o coração para o que está por vir.</p>
+          </div>
+        </div>
+
+        <div class="stage-card locked" id="stage-123">
+          <div class="stage-header">
+            <span class="stage-icon" id="icon-123">🚗</span>
+            <span class="stage-title">Estágio 3: O Ponto Cego</span>
+          </div>
+          <div class="password-area" id="area-123">
+            <p style="font-size: 13px; color: var(--rose-light); font-weight: 700; margin-bottom: 5px;">Atenção: Só peça
+              esta senha para o Lucas quando vocês entrarem no carro para ir embora.</p>
+            <input type="text" id="pwd-123" class="pwd-input" placeholder="Digite a palavra final...">
+            <button class="btn-primary" onclick="unlockStage(123, event, false)">Desbloquear Etapa Final</button>
+          </div>
+          <div class="stage-content" id="content-123" style="text-align: center;">
+            <div style="font-size: 60px; margin-bottom: 15px; animation: pulse-heart 1.5s infinite;">🌹</div>
+            <p class="reveal-text" style="color: var(--rose-light); font-size: 28px;">A sua verdadeira surpresa não cabe
+              nesta tela.</p>
+            <p class="romantic-text" style="font-size: 18px; font-weight: 700; color: var(--gold-light);">Olhe para mim
+              agora e ABRA O PORTA-MALAS! Feliz 2 anos, minha vida! 💜🚗</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
 
   </div>
 
@@ -1445,25 +1780,49 @@
   <div id="comfort-modal" class="modal-overlay">
     <div class="modal-box">
       <p class="modal-text">O sistema detectou que, para liberar essa última surpresa, você precisa estar com uma roupa
-        bem confortável, deitada ao lado do Lucas e com a Luna por perto. Vocês já se acomodaram? 🥰</p>
+        bem confortável, deitada ao lado do Lucas. Vocês já se acomodaram? 🥰</p>
       <button class="modal-btn" onclick="confirmComfort(event)">Sim, estamos prontos! 💜</button>
     </div>
   </div>
 
   <script>
     /* ===================================================
-       CONFIGURAÇÃO DE SENHAS REALISTAS (EDITAR CONFORME OS PAPÉIS)
+       CONFIGURAÇÃO DE SENHAS REALISTAS (DIA 11 e DIA 12)
        =================================================== */
     const senhasSecretas = {
+      // Dia 11
       1: "lucas",
       2: "12",
       3: "shopping",
       4: "emilly",
-      5: "cinema"
+      5: "cinema",
+      // Dia 12
+      121: "japa",
+      122: "segredo",
+      123: "portamalas"
     };
 
     /* ===================================================
-       QUIZ DE 10 PERGUNTAS
+       FUNÇÃO DA DICA ESTRUTURAL INTERATIVA
+       =================================================== */
+    function showStructuralHint(e) {
+      spawnHeartsAt(e, '✨');
+      const balloon = document.getElementById('structural-hint-balloon');
+      const img = document.getElementById('jappa-blurred-img');
+
+      if (balloon.style.display === 'none' || balloon.style.display === '') {
+        balloon.style.display = 'block';
+        if (img) {
+          img.style.transform = 'scale(1.04)';
+          setTimeout(() => { img.style.transform = 'scale(1)'; }, 300);
+        }
+      } else {
+        balloon.style.display = 'none';
+      }
+    }
+
+    /* ===================================================
+       QUIZ DE 10 PERGUNTAS (DIA 11)
        =================================================== */
     const perguntasQuiz = [
       {
@@ -1482,7 +1841,7 @@
       },
       {
         pergunta: "Quem é mais provável de dormir primeiro assistindo série? 😴",
-        alternativas: ["A) Lucas, sempre", "B) Emilly, sempre", "C) Os dois dormem juntos", "D) Luna não deixa a gente dormir", "E) A gente nunca dorme"],
+        alternativas: ["A) Lucas, sempre", "B) Emilly, sempre", "C) Os dois dormem juntos", "D) Vocês nunca dormem"],
         correta: 1,
         msgAcerto: "Exatamente! 5 minutos de série e você já tá roncando baixinho. 😂💜",
         msgErro: "Mentira! Sabe muito bem quem capota primeiro..."
@@ -1517,8 +1876,8 @@
       },
       {
         pergunta: "Qual destas é a maior paixão/hobby da Emilly no tempo livre (além de arquitetura)? ⏱️",
-        alternativas: ["A) Assistir séries e filmes", "B) Ficar horas escolhendo roupas em lojas", "C) Brincar e mimar a Luna", "D) Ouvir música e cantar alto", "E) Dormir até mais tarde sem despertador"],
-        correta: 4,
+        alternativas: ["A) Assistir séries e filmes", "B) Ficar horas escolhendo roupas em lojas", "C) Dormir até mais tarde sem despertador", "D) Ouvir música e cantar alto"],
+        correta: 2,
         msgAcerto: "Exatamente! Pricipalmente quando dá aquela preguiiii.😴",
         msgErro: "Mentira! Eu conheço você melhor do que você mesma pelo jeito. 👀"
       },
@@ -1531,8 +1890,8 @@
       },
       {
         pergunta: "Quem é o mais dramático quando fica minimamente doente ou resfriado? 🤒",
-        alternativas: ["A) Lucas, parece que está se despedindo do mundo por causa de uma gripe", "B) Os dois são fortes e aguentam firme sem reclamar", "C) Os dois são fortes e aguentam firme sem reclamar", "D) Emilly, quer dengo e atenção 24 horas por dia", "E) Os dois parecem que vão morrer"],
-        correta: 3,
+        alternativas: ["A) Lucas, parece que está se despedindo do mundo por causa de uma gripe", "B) Os dois são fortes e aguentam firme sem reclamar", "C) Emilly, quer dengo e atenção 24 horas por dia", "D) Os dois parecem que vão morrer"],
+        correta: 2,
         msgAcerto: "Sim! Parece que vira uma neném pedindo carinho 24 horas por dia. ✨",
         msgErro: "Errou! Você sabe que uma mini gripe já é motivo pra virar uma neném mimada né? 😂💜"
       }
@@ -1607,10 +1966,18 @@
        PERSISTÊNCIA (LOCALSTORAGE) E EASTER EGG (RESET)
        =================================================== */
     window.onload = function () {
+      // Restore Dia 11
       const maxStageUnlocked = parseInt(localStorage.getItem('festival_max_stage')) || 0;
-      if (maxStageUnlocked > 0) {
+      if (maxStageUnlocked > 0 && maxStageUnlocked <= 5) {
         for (let i = 1; i <= maxStageUnlocked; i++) { unlockStage(i, null, true); }
       }
+
+      // Restore Dia 12 (O 121 já vem forçado aberto via HTML)
+      const maxStage12Unlocked = parseInt(localStorage.getItem('festival_12_max_stage')) || 0;
+      if (maxStage12Unlocked >= 121) {
+        for (let i = 121; i <= maxStage12Unlocked; i++) { unlockStage(i, null, true); }
+      }
+
       renderQuiz();
     };
 
@@ -1641,47 +2008,68 @@
     function unlockStage(stageNum, e, isAutoLoad = false) {
       let isCorrect = false;
 
-      if (isAutoLoad) {
+      // O estágio 121 sempre dá como correto por padrão
+      if (isAutoLoad || stageNum === 121) {
         isCorrect = true;
       } else {
-        const inputVal = document.getElementById(`pwd-${stageNum}`).value.trim().toLowerCase();
-        if (inputVal === senhasSecretas[stageNum].toLowerCase()) isCorrect = true;
+        const inputEl = document.getElementById(`pwd-${stageNum}`);
+        if (inputEl) {
+          const inputVal = inputEl.value.trim().toLowerCase();
+          if (inputVal === senhasSecretas[stageNum].toLowerCase()) isCorrect = true;
+        }
       }
 
       if (isCorrect) {
         if (!isAutoLoad) {
           spawnHeartsAt(e, '🔓');
-          localStorage.setItem('festival_max_stage', stageNum);
+          if (stageNum <= 5) {
+            localStorage.setItem('festival_max_stage', stageNum);
+          } else {
+            localStorage.setItem('festival_12_max_stage', stageNum);
+          }
         }
 
-        document.getElementById(`area-${stageNum}`).style.display = 'none';
+        const areaEl = document.getElementById(`area-${stageNum}`);
+        if (areaEl) areaEl.style.display = 'none';
+
         const content = document.getElementById(`content-${stageNum}`);
-        content.style.display = 'block';
+        if (content) content.style.display = 'block';
 
         const card = document.getElementById(`stage-${stageNum}`);
-        card.classList.remove('locked');
-        card.classList.add('unlocked');
-        document.getElementById(`icon-${stageNum}`).textContent = '🔓';
+        if (card) {
+          card.classList.remove('locked');
+          card.classList.add('unlocked');
+        }
 
-        if (stageNum < 5) {
-          const nextCard = document.getElementById(`stage-${stageNum + 1}`);
+        const iconEl = document.getElementById(`icon-${stageNum}`);
+        if (iconEl && iconEl.textContent === '🔒') iconEl.textContent = '🔓';
+
+        const nextCard = document.getElementById(`stage-${stageNum + 1}`);
+        if (nextCard) {
           nextCard.classList.add('next');
           if (!isAutoLoad) {
             setTimeout(() => { nextCard.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 400);
           }
         }
 
-        // Exibe o footer quando o estágio 5 for finalizado ou auto-carregado
         if (stageNum === 5) {
           document.getElementById('day11-footer').style.display = 'block';
         }
+
+        if (stageNum === 121 && !isAutoLoad) spawnHeartsAt(e, '🍣');
+        if (stageNum === 123 && !isAutoLoad) {
+          spawnHeartsAt(e, '🌹');
+          spawnHeartsAt(e, '🚗');
+          setTimeout(() => { document.getElementById('content-123').scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 300);
+        }
+
       } else {
         showToast('Senha incorreta, tenta de novo! 🔒');
       }
     }
 
     /* ===================================================
-       LÓGICA DO SELO DE CONFORTO (STAGE 5)
+       LÓGICA DO SELO DE CONFORTO (STAGE 5 do Dia 11)
        =================================================== */
     let eventCacheForStage5;
 
@@ -1702,7 +2090,6 @@
         spawnHeartsAt(e, '🍿');
         spawnHeartsAt(e, '🎬');
 
-        // Desce a tela suavemente para o rodapé após um curto delay
         setTimeout(() => {
           document.getElementById('day11-footer').scrollIntoView({ behavior: 'smooth', block: 'end' });
         }, 500);
@@ -1710,7 +2097,21 @@
     }
 
     /* ===================================================
-       AVALIAÇÃO FINAL (FOOTER)
+       INTERAÇÃO DA PLANTA BAIXA (Dia 12)
+       =================================================== */
+    function showBlueprint(index, e) {
+      document.querySelectorAll('.bp-node').forEach(node => node.classList.remove('active'));
+      document.querySelectorAll('.bp-content').forEach(content => content.classList.remove('active'));
+
+      const clickedBtn = e.currentTarget || e.target;
+      clickedBtn.classList.add('active');
+
+      document.getElementById(`bp-content-${index}`).classList.add('active');
+      spawnHeartsAt(e, '✨');
+    }
+
+    /* ===================================================
+       AVALIAÇÃO FINAL (FOOTER DIA 11)
        =================================================== */
     const ratingLabels = ['', 'Começando bem... 🌱', 'Já tá gostoso! 😊', 'Adorando! 💜', 'Quase perfeito! 🌟', 'NOTA 10, AMEI!! 🥺💜'];
     let currentRating = 0;
@@ -1775,22 +2176,33 @@
     })();
 
     /* ===================================================
-       NAVEGAÇÃO E TOASTS
+       NAVEGAÇÃO COMUM E TOASTS
        =================================================== */
-    function openDay11(e) {
+    function openScreen(screenId, e) {
       if (e) spawnHeartsAt(e);
       const home = document.getElementById('home-screen');
-      const day11 = document.getElementById('day11-screen');
-      home.classList.remove('active'); home.classList.add('hidden-left');
-      day11.classList.remove('hidden-right'); day11.classList.add('active');
-      day11.scrollTop = 0;
+      const targetScreen = document.getElementById(screenId);
+
+      home.classList.remove('active');
+      home.classList.add('hidden-left');
+
+      targetScreen.classList.remove('hidden-right');
+      targetScreen.classList.add('active');
+      targetScreen.scrollTop = 0;
     }
-    function closeDay11() {
+
+    function closeScreen(screenId) {
       const home = document.getElementById('home-screen');
-      const day11 = document.getElementById('day11-screen');
-      day11.classList.remove('active'); day11.classList.add('hidden-right');
-      home.classList.remove('hidden-left'); home.classList.add('active');
+      const targetScreen = document.getElementById(screenId);
+
+      targetScreen.classList.remove('active');
+      targetScreen.classList.add('hidden-right');
+
+      home.classList.remove('hidden-left');
+      home.classList.add('active');
     }
+
+    function openDay11(e) { openScreen('day11-screen', e); }
 
     let toastTimer;
     function showLockedToast(e) {
@@ -1824,7 +2236,7 @@
     }
 
     /* ===================================================
-       SELEÇÃO DE FILMES (Estágio 5)
+       SELEÇÃO DE FILMES (Estágio 5 do Dia 11)
        =================================================== */
     function selectMovie(card, e) {
       const btn = card.querySelector('.movie-btn');
@@ -1839,9 +2251,6 @@
       card.classList.add('selected');
       btn.textContent = 'Escolhido para Hoje! 🎬🍿';
       spawnHeartsAt(e, '🍿');
-    }
-    function playMockVideo() {
-      showToast("O seu vídeo surpresa vai tocar aqui! 🎬");
     }
   </script>
 </body>
